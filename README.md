@@ -31,6 +31,10 @@ Run the project using
 ```bash
   php artisan serve
 ```
+Run test cases using
+```bash
+  php artisan test
+```
 ## Documentation
 
 Please refer the this [Google Doc](https://docs.google.com/document/d/1X0NX5zV3mRBxVa2H6lUOs-7CRbC4jb_SQ8yjqss8cLc) for documentation.
