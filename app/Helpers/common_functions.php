@@ -31,6 +31,11 @@ function readFileContent($filename, $file_details = [])
 {
     $file_content = explode("\n", file_get_contents(public_path('assets/text_files/' . trim($filename))));
     $file_content = array_map('trim', $file_content);
+    $check_file_content = $file_content;
+
+    if(array_key_exists($filename,$file_details) && count($check_file_content) != count(array_filter($check_file_content, 'is_numeric'))){
+        return ['error'=>'File recursion in infinite mode. Please check the files.'];
+    }
 
     $file_details[$filename] = $file_content;
     foreach ($file_content as $key => $value) {

@@ -52,6 +52,10 @@
                         html = `<table class="result-table">${html}</table>`;
                         $('#result').html(html);
                     } else {
+                        var html = `<table class="result-table">
+                            <tr><td class="text-muted">Please select file to fetch counts</td></tr>
+                        </table>`
+                        $('#result').html(html);
                         demo.showNotification(data.msg,'danger');
                     }
                 },

@@ -49,6 +49,9 @@ class FileController extends Controller
 
         // Call recursive function to get the content of file and subfiles
         $files_content = readFileContent($request->filename);
+        if (isset($files_content['error']) && $files_content['error']!='') {
+            return response()->json(["status" => 422, "msg" => $files_content['error'], "result" => array()]);
+        }
 
         // Get the sum of all files and subfiles
         $sum_of_files = calculateSum($files_content);
